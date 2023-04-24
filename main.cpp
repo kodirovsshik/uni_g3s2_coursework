@@ -85,6 +85,13 @@ struct bgra_image
 	{
 		return self.data[n];
 	}
+
+	void create(size_t w, size_t h)
+	{
+		this->data.resize(w * h);
+		this->size[0] = w;
+		this->size[1] = h;
+	}
 };
 
 bool gdal_read_bgra_image(GDALDataset* parr, bgra_image& img)
@@ -119,14 +126,19 @@ bool gdal_read_bgra_image(GDALDataset* parr, bgra_image& img)
 }
 
 
+template<class T, class fp = T>
+T lerp(T a, T b, T t)
+{
+	return a + (b - a) * t;
+}
 
 
 template<class T, class fp = double>
 T bilerp(T a1, T a2, T b1, T b2, fp tab, fp t12)
 {
-	T a = std::lerp(a1, a2, t12);
-	T b = std::lerp(b1, b2, t12);
-	return std::lerp(a, b, tab);
+	T a = lerp(a1, a2, t12);
+	T b = lerp(b1, b2, t12);
+	return lerp(a, b, tab);
 }
 
 template<>
@@ -188,35 +200,6 @@ void copy_resize_image(bgra_image& dst, const bgra_image& src)
 }
 
 
-//int main()
-//{
-//	std::ifstream fin;
-//	std::ofstream fout("data_shifted.txt");
-//
-//	fin.open("data.txt");
-//	double min = INFINITY;
-//	while (true)
-//	{
-//		double x;
-//		fin >> x;
-//		if (!fin)
-//			break;
-//		min = std::min(min, x);
-//	}
-//	fin.close();
-//	fin.open("data.txt");
-//	while (true)
-//	{
-//		double x;
-//		fin >> x;
-//		if (!fin)
-//			break;
-//		fout << x - min << '\n';
-//	}
-//	fin.close();
-//}
-
-
 int main()
 {
 	GDALAllRegister();
@@ -232,8 +215,7 @@ int main()
 	win.open(w, h);
 
 	bgra_image im2;
-	im2.size[0] = w;
-	im2.size[1] = h;
+	im2.create(w, h);
 	copy_resize_image(im2, im1);
 	win.draw_pixels_bgra_front(im2.data.data(), 0, 0, w, h);
 	win.set_framerate(20);
