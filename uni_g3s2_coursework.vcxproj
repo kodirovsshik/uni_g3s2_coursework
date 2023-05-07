@@ -80,9 +80,10 @@
       <LanguageStandard_C>stdc17</LanguageStandard_C>
       <AdditionalIncludeDirectories>$(SolutionDir)..\libksn\ksn\include;D:\_proj\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
-      <ScanSourceForModuleDependencies>true</ScanSourceForModuleDependencies>
-      <EnableModules>true</EnableModules>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+      <EnableModules>false</EnableModules>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <BuildStlModules>false</BuildStlModules>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -102,9 +103,10 @@
       <LanguageStandard_C>stdc17</LanguageStandard_C>
       <AdditionalIncludeDirectories>$(SolutionDir)..\libksn\ksn\include;D:\_proj\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
-      <ScanSourceForModuleDependencies>true</ScanSourceForModuleDependencies>
-      <EnableModules>true</EnableModules>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+      <EnableModules>false</EnableModules>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <BuildStlModules>false</BuildStlModules>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -124,9 +126,14 @@
       <LanguageStandard_C>stdc17</LanguageStandard_C>
       <AdditionalIncludeDirectories>$(SolutionDir)..\libksn\ksn\include;D:\_proj\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
-      <ScanSourceForModuleDependencies>true</ScanSourceForModuleDependencies>
-      <EnableModules>true</EnableModules>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+      <EnableModules>false</EnableModules>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>Disabled</Optimization>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <IntrinsicFunctions>false</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Neither</FavorSizeOrSpeed>
+      <BuildStlModules>false</BuildStlModules>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -146,9 +153,10 @@
       <LanguageStandard_C>stdc17</LanguageStandard_C>
       <AdditionalIncludeDirectories>$(SolutionDir)..\libksn\ksn\include;D:\_proj\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
-      <ScanSourceForModuleDependencies>true</ScanSourceForModuleDependencies>
-      <EnableModules>true</EnableModules>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+      <EnableModules>false</EnableModules>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <BuildStlModules>false</BuildStlModules>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
